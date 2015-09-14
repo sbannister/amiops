@@ -25,7 +25,7 @@ try
         echo '<markers>';
         
         // Iterate through the rows, printing XML nodes for each
-        while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
+        while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
         {
           // ADD TO XML DOCUMENT NODE
           echo '<marker ';
@@ -38,7 +38,7 @@ try
         // End XML file
         echo '</markers>';
         
-        sqlsrv_free_stmt($result);
+        sqlsrv_free_stmt($getProducts);
         sqlsrv_close($conn);
     }
     catch(Exception $e)
