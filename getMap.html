@@ -23,6 +23,7 @@
       // Change this depending on the name of your PHP file
       downloadUrl("getMap.php", function(data) {
         var xml = data.responseXML;
+        alert(xml);
         var markers = xml.documentElement.getElementsByTagName("marker");
         for (var i = 0; i < markers.length; i++) {
           var name = markers[i].getAttribute("name");
