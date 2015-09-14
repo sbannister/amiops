@@ -25,16 +25,6 @@ try
         echo("Error!");
     }
 
-  $productCount = 0;
-  while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
-  {
-      echo($row['Device_Serial_No']);
-      echo("<br/>");
-      $productCount++;
-  }
-  sqlsrv_free_stmt($result);
-  sqlsrv_close($conn);
-
 header("Content-type: text/xml");
 
 // Start XML file, echo parent node
