@@ -17,7 +17,7 @@ try
         if ($getProducts == FALSE)
             die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
-
+}
 ?>
 <rows>
     <head>
