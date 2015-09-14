@@ -29,7 +29,7 @@ try
 
 	while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
 	{
-		print("<row open='A' id='$row[0]'><cell close='B'>");
+		print("<row open='A' id='$i'><cell close='B'>");
 		echo $row['event_time'] ;
 		print("</cell><cell>");
 		echo $row['src_mac'] ;
@@ -38,6 +38,7 @@ try
 		print("</cell><cell>");
 		echo $row['event_id'] ;
 		print("</cell></row>");
+		$i++;
 	}
         sqlsrv_free_stmt($getProducts);
         sqlsrv_close($conn);
