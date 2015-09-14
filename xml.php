@@ -21,10 +21,10 @@ try
     }
 try
     {
-        $tsql = "SELECT TOP 100 * FROM event";
+        $tsql = "SELECT TOP 100 * FROM events";
         $getProducts = sqlsrv_query($conn, $tsql);
-        //if ($getProducts == FALSE)
-        //    die(FormatErrors(sqlsrv_errors()));
+        if ($getProducts == FALSE)
+            die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
 
 	while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
