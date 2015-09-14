@@ -1,4 +1,4 @@
-<?php
+<?
 
 function parseToXML($htmlStr) 
 { 
@@ -22,7 +22,7 @@ return $xmlStr;
     {
         echo("Error!");
     }
-
+echo("Here!");
 try
     {
         $tsql = "SELECT TOP 100 * FROM location";
