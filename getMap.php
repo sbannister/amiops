@@ -35,7 +35,7 @@ while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
 {
   // ADD TO XML DOCUMENT NODE
   echo '<marker ';
-  echo 'name="' . parseToXML('&','&amp;', $row['Device_Util_ID']) . '" ';
+  echo 'name="' .$row['Device_Util_ID'] . '" ';
   echo 'lat="' . $row['Service_Pt_Latitude'] . '" ';
   echo 'lng="' . $row['Service_Pt_Longitude'] . '" ';
   echo '/>';
