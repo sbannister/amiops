@@ -26,6 +26,7 @@ try
         if ($getProducts == FALSE)
             die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
+        i = 0;
 
 	while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
 	{
