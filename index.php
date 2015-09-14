@@ -18,14 +18,14 @@
     }
 try
     {
-        $tsql = "SELECT TOP 100 * FROM device";
+        $tsql = "SELECT TOP 100 * FROM location";
         $getProducts = sqlsrv_query($conn, $tsql);
         if ($getProducts == FALSE)
             die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
         while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
         {
-            echo($row['Device_Serial_No']);
+            echo($row['Device_Util_ID']);
             echo("<br/>");
             $productCount++;
         }
