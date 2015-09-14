@@ -21,7 +21,7 @@ try
     }
 try
     {
-        $tsql = "SELECT TOP 100 * FROM events";
+        $tsql = "SELECT TOP 100 * FROM events WHERE event_severity = 'Emergency'";
         $getProducts = sqlsrv_query($conn, $tsql);
         if ($getProducts == FALSE)
             die(FormatErrors(sqlsrv_errors()));
