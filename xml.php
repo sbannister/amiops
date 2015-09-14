@@ -14,8 +14,8 @@ try
     {
         $tsql = "SELECT TOP 100 * FROM event";
         $getProducts = sqlsrv_query($conn, $tsql);
-        if ($getProducts == FALSE)
-            die(FormatErrors(sqlsrv_errors()));
+        //if ($getProducts == FALSE)
+        //    die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
 
     }
