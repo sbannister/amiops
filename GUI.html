@@ -28,19 +28,17 @@
 				icons_path: "http://www.dhtmlx.com/docs/products/dhtmlxSidebar/samples/common/win_32x32/",
 				width: 70,
 				items: [
-					{id: "recent", text: "Recent", icon: "recent.png", selected: true},
-					{id: "desktop", text: "Desktop", icon: "desktop.png"},
-					{id: "downloads", text: "Downloads", icon: "downloads.png"},
+					{id: "recent", text: "Events", icon: "recent.png", selected: true},
+					{id: "desktop", text: "Comms issues", icon: "desktop.png"},
+					{id: "downloads", text: "Read reports", icon: "downloads.png"},
 					{type: "separator"},
-					{id: "documents", text: "Documents", icon: "documents.png"},
-					{id: "music", text: "Music", icon: "music.png"},
-					{id: "pictures", text: "Pictures", icon: "pictures.png"},
-					{id: "video", text: "Video", icon: "video.png"}
+					{id: "documents", text: "Network status", icon: "documents.png"},
+					{id: "music", text: "Errors", icon: "music.png"}
 				]
 			});
 
 			myLayout = mySidebar.cells("recent").attachLayout({
-						pattern: "3T"
+						pattern: "3L"
 					});
 
 			myLayout.cells("a").setText("Network");
