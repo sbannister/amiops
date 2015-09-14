@@ -46,7 +46,9 @@
 			myLayout.cells("c").setText("Events");
 			myLayout.cells("a").setWidth(200);
 			myLayout.cells("b").setHeight(500);
+			myLayout.cells("a").attachURL("search.html");
 			myLayout.cells("b").attachURL("getMap.html");
+
 
 			myGrid1 = myLayout.cells("c").attachGrid();
 			myGrid1.attachEvent("onRowSelect",doOnRowSelected);
