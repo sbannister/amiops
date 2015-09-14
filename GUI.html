@@ -26,7 +26,7 @@
 				template: "icons_text",
 				//skin: "dhx_web",
 				icons_path: "http://www.dhtmlx.com/docs/products/dhtmlxSidebar/samples/common/win_32x32/",
-				width: 70,
+				width: 90,
 				items: [
 					{id: "recent", text: "Events", icon: "recent.png", selected: true},
 					{id: "desktop", text: "Comms issues", icon: "desktop.png"},
@@ -44,6 +44,7 @@
 			myLayout.cells("b").setText("Map");
 			myLayout.cells("a").setText("Packet Capture");
 			myLayout.cells("c").setText("Packet Details");
+			myLayout.cells("a").setWidth(300);
 			myLayout.cells("b").setHeight(500);
 			myLayout.cells("b").setWidth(800);
 			myLayout.cells("b").attachURL("getMap.html");
