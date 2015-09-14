@@ -1,8 +1,3 @@
-<html>
- <head>
-  <title>PHP Test</title>
- </head>
- <body>
 
 <?    try
     {
@@ -38,6 +33,3 @@ try
     }
     
 ?>
-
- </body>
-</html>
