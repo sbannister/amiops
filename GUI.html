@@ -47,13 +47,13 @@
 			myLayout.cells("b").setHeight(500);
 			myLayout.cells("b").attachURL("getMap.html");
 
-			myGrid1 = myLayout.cells("b").attachGrid();
+			myGrid1 = myLayout.cells("c").attachGrid();
 			myGrid1.attachEvent("onRowSelect",doOnRowSelected);
 			myGrid1.setImagePath("../dhtmlx/codebase/imgs/");
 			myGrid1.init();
 			myGrid1.load("xml.php");
 
-			myGrid2 = myLayout.cells("c").attachGrid();
+			myGrid2 = myLayout.cells("d").attachGrid();
 			myGrid2.setImagePath("../dhtmlx/codebase/imgs/");
 			myGrid2.init();
 		}
