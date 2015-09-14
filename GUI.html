@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SCADA security simulator</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<link rel="stylesheet" type="text/css" href="http://www.dhtmlx.com/docs/products/codebase/dhtmlx.css"/>
+	<script src="http://www.dhtmlx.com/docs/products/codebase/dhtmlx.js"></script>
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+			overflow: hidden;
+		}
+	</style>
+	<script>
+		var myGrid1;
+		var myGrid2;
+		var myLayout;
+		var mySideBar;
+		function doOnLoad(){
+			mySidebar = new dhtmlXSideBar({
+				parent: document.body,
+				template: "icons_text",
+				//skin: "dhx_web",
+				icons_path: "../common/win_32x32/",
+				width: 70,
+				items: [
+					{id: "recent", text: "Recent", icon: "recent.png", selected: true},
+					{id: "desktop", text: "Desktop", icon: "desktop.png"},
+					{id: "downloads", text: "Downloads", icon: "downloads.png"},
+					{type: "separator"},
+					{id: "documents", text: "Documents", icon: "documents.png"},
+					{id: "music", text: "Music", icon: "music.png"},
+					{id: "pictures", text: "Pictures", icon: "pictures.png"},
+					{id: "video", text: "Video", icon: "video.png"}
+				]
+			});
+
+			myLayout = mySidebar.cells("recent").attachLayout({
+						pattern: "3T"
+					});
+
+			myLayout.cells("a").setText("Network");
+			myLayout.cells("b").setText("Packet Capture");
+			myLayout.cells("c").setText("Packet Details");
+			myLayout.cells("a").setHeight(500);
+			myLayout.cells("a").attachURL("network.html");
+
+			myGrid1 = myLayout.cells("b").attachGrid();
+			myGrid1.attachEvent("onRowSelect",doOnRowSelected);
+			myGrid1.setImagePath("../dhtmlx/codebase/imgs/");
+			myGrid1.init();
+			myGrid1.load("xml.php");
+
+			myGrid2 = myLayout.cells("c").attachGrid();
+			myGrid2.setImagePath("../dhtmlx/codebase/imgs/");
+			myGrid2.init();
+		}
+		function doOnRowSelected(id) {
+			//alert("Row : " + id + " selected");
+			myGrid2.clearAll(true);
+			myGrid2.load("getPacket.php?pktId=" + id);
+		}
+	</script>
+</head>
+<body onload="doOnLoad()">
+</body>
+</html>
