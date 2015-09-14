@@ -8,14 +8,8 @@
     //<![CDATA[
 
     var customIcons = {
-      restaurant: {
         icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png',
         shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
-      },
-      bar: {
-        icon: 'http://labs.google.com/ridefinder/images/mm_20_red.png',
-        shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
-      }
     };
 
     function load() {
@@ -32,12 +26,10 @@
         var markers = xml.documentElement.getElementsByTagName("marker");
         for (var i = 0; i < markers.length; i++) {
           var name = markers[i].getAttribute("name");
-          var address = markers[i].getAttribute("address");
-          var type = markers[i].getAttribute("type");
           var point = new google.maps.LatLng(
               parseFloat(markers[i].getAttribute("lat")),
               parseFloat(markers[i].getAttribute("lng")));
-          var html = "<b>" + name + "</b> <br/>" + address;
+          var html = "<b>" + name + "</b>;
           var icon = customIcons[type] || {};
           var marker = new google.maps.Marker({
             map: map,
@@ -80,6 +72,6 @@
   </head>
 
   <body onload="load()">
-    <div id="map" style="width: 800px; height: 400px"></div>
+    <div id="map" style="width: 800px; height: 600px"></div>
   </body>
 </html>
