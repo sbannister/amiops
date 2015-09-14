@@ -18,13 +18,27 @@ try
         if ($getProducts == FALSE)
             die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
-        while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
+
+        header("Content-type: text/xml");
+        
+        // Start XML file, echo parent node
+        echo '<markers>';
+        
+        // Iterate through the rows, printing XML nodes for each
+        while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
         {
-            echo($row['Device_Util_ID']);
-            echo("<br/>");
-            $productCount++;
+          // ADD TO XML DOCUMENT NODE
+          echo '<marker ';
+          echo 'name="' .$row['Device_Util_ID'] . '" ';
+          echo 'lat="' . $row['Service_Pt_Latitude'] . '" ';
+          echo 'lng="' . $row['Service_Pt_Longitude'] . '" ';
+          echo '/>';
         }
-        sqlsrv_free_stmt($getProducts);
+        
+        // End XML file
+        echo '</markers>';
+        
+        sqlsrv_free_stmt($result);
         sqlsrv_close($conn);
     }
     catch(Exception $e)
