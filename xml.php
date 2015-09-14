@@ -1,4 +1,13 @@
-<?    try
+
+<rows>
+    <head>
+        <column width="150" type="ed" align="left" sort="str">Time</column>
+        <column width="100" type="ed" align="left" sort="str">Source</column>
+        <column width="100" type="ed" align="left" sort="str">Event</column>
+        <column width="100" type="ed" align="left" sort="str">Event ID</column>
+    </head>
+<?    
+try
     {
         $connectionInfo = array("UID" => "sbannister@w8bvrrkcp9", "pwd" => "T@maz0n13", "Database" => "AmiAdvantageDb", "LoginTimeout" => 30, "Encrypt" => 1);
         $serverName = "tcp:w8bvrrkcp9.database.windows.net,1433";
@@ -23,15 +32,7 @@ try
     {
         echo("Error!");
     }
-?>
-<rows>
-    <head>
-        <column width="150" type="ed" align="left" sort="str">Time</column>
-        <column width="100" type="ed" align="left" sort="str">Source</column>
-        <column width="100" type="ed" align="left" sort="str">Event</column>
-        <column width="100" type="ed" align="left" sort="str">Event ID</column>
-    </head>
-<?
+
 	while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
 	{
 		print("<row open='A' id='$row[0]'><cell close='B'>");
