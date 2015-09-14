@@ -27,12 +27,6 @@ try
         //    die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
 
-    }
-    catch(Exception $e)
-    {
-        echo("Error!");
-    }
-
 	while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
 	{
 		print("<row open='A' id='$row[0]'><cell close='B'>");
@@ -47,6 +41,12 @@ try
 	}
         sqlsrv_free_stmt($getProducts);
         sqlsrv_close($conn);
+        
+    }
+    catch(Exception $e)
+    {
+        echo("Error!");
+    }
 ?>
 </rows>
 
