@@ -1,9 +1,9 @@
 
 <rows>
     <head>
-        <column width="250" type="ed" align="left" sort="str">Time</column>
+        <column width="220" type="ed" align="left" sort="str">Time</column>
         <column width="100" type="ed" align="left" sort="str">Source</column>
-        <column width="300" type="ed" align="left" sort="str">Event</column>
+        <column width="500" type="ed" align="left" sort="str">Event</column>
         <column width="100" type="ed" align="left" sort="str">Event ID</column>
     </head>
 <?    
