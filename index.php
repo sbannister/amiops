@@ -16,7 +16,8 @@
     {
         echo("Error!");
     }
-
+try
+    {
         $conn = OpenConnection();
         $tsql = "SELECT TOP 100 * FROM device";
         $getProducts = sqlsrv_query($conn, $tsql);
