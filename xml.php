@@ -17,7 +17,12 @@ try
         if ($getProducts == FALSE)
             die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
-}
+
+    }
+    catch(Exception $e)
+    {
+        echo("Error!");
+    }
 ?>
 <rows>
     <head>
@@ -39,6 +44,8 @@ try
 		echo $row['event_id'] ;
 		print("</cell></row>");
 	}
+        sqlsrv_free_stmt($getProducts);
+        sqlsrv_close($conn);
 ?>
 </rows>
 
